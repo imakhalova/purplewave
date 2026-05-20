@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.purplewave.auction.data.SyncStatusConverterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-20T01:14:02" hostname="Irinas-MacBook-Air.local" time="0.0">
-  <properties/>
-  <testcase name="stores as uppercase name" classname="com.purplewave.auction.data.SyncStatusConverterTest" time="0.0"/>
-  <testcase name="round-trips all SyncStatus values" classname="com.purplewave.auction.data.SyncStatusConverterTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

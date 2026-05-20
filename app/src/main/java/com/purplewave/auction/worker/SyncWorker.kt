@@ -48,6 +48,7 @@ class SyncWorker(
 
     companion object {
         const val WORK_TAG = "auction_sync"
+        const val WORK_NAME = "auction_sync_unique"
 
         /**
          * Builds a one-time sync request with a network constraint.

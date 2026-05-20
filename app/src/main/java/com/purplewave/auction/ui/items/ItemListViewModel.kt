@@ -3,6 +3,7 @@ package com.purplewave.auction.ui.items
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
 import com.purplewave.auction.data.AuctionRepository
 import com.purplewave.auction.di.ServiceLocator
@@ -30,11 +31,17 @@ class ItemListViewModel(application: Application) : AndroidViewModel(application
         )
 
     /**
-     * Enqueues a sync. WorkManager deduplicates by tag, so spamming this is safe.
-     * The CONNECTED constraint means it will wait automatically if offline.
+     * Enqueues a sync. Uses KEEP policy so rapid triggers (e.g. capturing
+     * multiple items quickly) don't stack duplicate Workers — the in-flight
+     * sync will finish and pick up any items saved after it started on the
+     * next trigger. The CONNECTED constraint holds the work if offline.
      */
     fun triggerSync() {
         WorkManager.getInstance(getApplication())
-            .enqueue(SyncWorker.buildRequest())
+            .enqueueUniqueWork(
+                SyncWorker.WORK_NAME,
+                ExistingWorkPolicy.KEEP,
+                SyncWorker.buildRequest()
+            )
     }
 }
