@@ -41,6 +41,7 @@ Because the constraint re-evaluates on connectivity change, any items that are s
 ## What I Would Add With More Time
 
 - **DI framework** (e.g Hilt, Koin) for proper dependency injection with test-friendly component swapping.
+- **GET query** to be able to receive latest updates from server and merging logic for local and server changes.
 - **Room in-memory database test** for the DAO queries (especially `getPendingOrFailed`).
 - **CameraX** for real photo capture and storing the URI in the entity.
 - **Image compression and upload queue***
