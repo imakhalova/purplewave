@@ -1,0 +1,1 @@
+-keep class com.purplewave.auction.data.remote.** { *; }

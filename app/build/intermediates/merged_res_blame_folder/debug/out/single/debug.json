@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/irinamakhalova/.gradle/daemon/8.6/com.purplewave.auction.app-merged_res-60:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/irinamakhalova/.gradle/daemon/8.6/com.purplewave.auction.app-main-62:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/irinamakhalova/.gradle/daemon/8.6/com.purplewave.auction.app-merged_res-60:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/irinamakhalova/.gradle/daemon/8.6/com.purplewave.auction.app-main-62:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.purplewave.auction.app-merged_res-60:/drawable_cat_tractor.jpg.flat",
+        "source": "com.purplewave.auction.app-main-62:/drawable/cat_tractor.jpg"
+    },
+    {
+        "merged": "/Users/irinamakhalova/.gradle/daemon/8.6/com.purplewave.auction.app-merged_res-60:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/irinamakhalova/.gradle/daemon/8.6/com.purplewave.auction.app-main-62:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    }
+]

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.purplewave.auction.worker.SyncWorkerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-05-20T01:14:05" hostname="Irinas-MacBook-Air.local" time="0.94">
+  <properties/>
+  <testcase name="returns success when no pending items" classname="com.purplewave.auction.worker.SyncWorkerTest" time="0.891"/>
+  <testcase name="returns retry when unexpected exception escapes" classname="com.purplewave.auction.worker.SyncWorkerTest" time="0.017"/>
+  <testcase name="returns success even when some uploads fail" classname="com.purplewave.auction.worker.SyncWorkerTest" time="0.012"/>
+  <testcase name="calls uploadItem for each pending item" classname="com.purplewave.auction.worker.SyncWorkerTest" time="0.02"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
