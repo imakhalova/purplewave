@@ -20,14 +20,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.purplewave.auction.R
 
+@Preview (showSystemUi = true)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CaptureScreen(
-    onNavigateBack: () -> Unit,
+    onNavigateBack: () -> Unit = {},
     viewModel: CaptureViewModel = viewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()

@@ -3,6 +3,7 @@ package com.purplewave.auction.ui.capture
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
 import com.purplewave.auction.data.AuctionRepository
 import com.purplewave.auction.di.ServiceLocator
@@ -14,6 +15,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.util.UUID
 
 data class CaptureUiState(
     val title: String = "",
@@ -56,12 +58,13 @@ class CaptureViewModel(application: Application) : AndroidViewModel(application)
             try {
                 repository.saveItem(
                     AuctionItem(
+                        // UUID generated here, on the capturing device, before any server
+                        // interaction. Stable across retries; used as an idempotency key
+                        // on upload so the server won't create duplicates on retry.
+                        clientId = UUID.randomUUID().toString(),
                         title = state.title.trim(),
                         description = state.description.trim(),
                         conditionRating = state.conditionRating,
-                        // Sentinel URI — signals "photo was captured" without a real file path.
-                        // The UI layer maps this to the bundled cat_tractor drawable.
-                        // A real implementation would store the CameraX output URI here.
                         photoUri = if (state.hasPhoto) PHOTO_CAPTURED_SENTINEL else null,
                         syncStatus = SyncStatus.PENDING,
                         capturedAtMs = System.currentTimeMillis()

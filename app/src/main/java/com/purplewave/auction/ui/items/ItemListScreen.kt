@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -48,14 +49,18 @@ fun ItemListScreen(
                     TextButton(onClick = { viewModel.triggerSync() }) {
                         Text("Sync Now")
                     }
-                }
-            )
+                },
+                )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = onAddItem) {
+            FloatingActionButton(onClick = onAddItem,
+                shape = CircleShape,
+            ) {
                 Icon(Icons.Default.Add, contentDescription = "Capture item")
             }
-        }
+        },
+        contentWindowInsets = WindowInsets.statusBars
+
     ) { padding ->
         if (uiState.isLoading) {
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {

@@ -32,7 +32,9 @@ object ServiceLocator {
             context.applicationContext,
             AuctionDatabase::class.java,
             "auction.db"
-        ).build().also { database = it }
+        )
+            .fallbackToDestructiveMigration()
+            .build().also { database = it }
 
         return AuctionRepository(
             dao = db.auctionItemDao(),

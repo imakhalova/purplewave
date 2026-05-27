@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 
 @Database(
     entities = [AuctionItemEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = true          // keeps schema JSON for migration audits
 )
 @TypeConverters(SyncStatusConverter::class)
